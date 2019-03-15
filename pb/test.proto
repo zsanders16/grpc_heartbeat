@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message PingRequest {
+    string text = 1;
+}
+
+message PingResponse {
+    string text = 1;
+}
+
+service Ping {
+    rpc Connected (stream PingRequest) returns (stream PingResponse);
+}
